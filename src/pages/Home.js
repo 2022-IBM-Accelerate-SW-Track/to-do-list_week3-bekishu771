@@ -42,6 +42,23 @@ class Home extends Component {
     this.setState({
       todos: new_list,
     });
+   
+    if (this.state.todos.find(t => t.content === null ||"Invalid Date")) {
+      return;
+     } 
+    else {
+      todo.id = Math.random();
+      let new_list = [...this.state.todos, todo];
+      this.setState({
+        todos: new_list,
+      });
+      //new_list = [...this.state.todos, todo];
+     }
+
+
+
+
+
   };
   render() {
     return (
